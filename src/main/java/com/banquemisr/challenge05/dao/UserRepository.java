@@ -3,6 +3,8 @@ package com.banquemisr.challenge05.dao;
 import com.banquemisr.challenge05.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 /**
  * <p>
  * Title: UserRepository.java
@@ -23,5 +25,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 	// Find a user by username
-	User findByUsername(String username);
+	Optional<User> findByUsername(String username);
 }

@@ -23,7 +23,7 @@ import lombok.Data;
  * @version 1.0
  * @date 01/01/2025
  */
-@Entity
+@Entity(name = "users")
 @Data
 public class User extends AbstractEntity {
 
@@ -34,6 +34,8 @@ public class User extends AbstractEntity {
 	private String password;
 
 	@NotBlank
+	private String email;
+
 	@Enumerated(EnumType.STRING)
 	private UserRole role;
 }

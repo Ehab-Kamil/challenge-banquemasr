@@ -47,7 +47,6 @@ public class TaskController {
 	private TaskTransformer taskTransformer;
 
 	@GetMapping
-//	@PreAuthorize("hasRole('ADMIN') or @securityService.isOwner(authentication, #userId)")
 	public ResponseEntity<List<TaskDTO>> getAllTasks() {
 		return ResponseEntity.ok(taskService.getAllTasks());
 	}

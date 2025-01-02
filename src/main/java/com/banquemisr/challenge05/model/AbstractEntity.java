@@ -4,6 +4,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -32,7 +33,8 @@ import java.time.LocalDateTime;
 public class AbstractEntity {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mySeqGen")
+	@SequenceGenerator(name = "mySeqGen", sequenceName = "my_sequence_name", allocationSize = 1)
 	private Long id;
 
 	@CreationTimestamp
