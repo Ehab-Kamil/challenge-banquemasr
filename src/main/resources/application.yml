@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: challenge05
+  datasource:
+    url: jdbc:postgresql://localhost:5432/challenge05
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true # Enables SQL query logging
+    format-sql: true # Formats the SQL logs for better readability
+
+  # Optional: Connection pool configuration for HikariCP
+  datasource.hikari:
+    maximum-pool-size: 10
+    minimum-idle: 5
+    idle-timeout: 30000
+    max-lifetime: 1800000
+    connection-timeout: 20000
+
+# Additional optional configurations
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
