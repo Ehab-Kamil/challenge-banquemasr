@@ -30,7 +30,13 @@ public class Challenge05Application {
 			user.setPassword(passwordEncoder.encode("password"));
 			user.setRole(ADMIN);
 			// Save the user to the database
+		try{
 			userRepository.save(user);
+		}catch (Exception e){
+			//do nothing just to keep the application running incase unable to create the user
+		}
+
+
 
 		};
 	}
